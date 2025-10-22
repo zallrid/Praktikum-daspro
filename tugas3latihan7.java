@@ -30,7 +30,7 @@ public class tugas3latihan7 {
         } else if (bantuan.equalsIgnoreCase("tidak")) {
             System.out.println("Polinema tidak memberikan anggaran");
         }
-        biayaTetap = publikasi + dekorasi + komsumsi + hadiah + operasional + (komsumsiPeserta * jumlahTim * 3);
+        biayaTetap = publikasi + dekorasi + komsumsi + hadiah + operasional + (komsumsiPeserta * jumlahTim * 3) + (honorium * jumlahTim);
         biayaTIm = biayaDaftar * jumlahTim;
         biayaSponsor = danaPolinema * biayaTetap;
         sponsor = biayaTetap - (biayaSponsor + biayaTIm);
