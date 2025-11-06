@@ -7,9 +7,9 @@ public static void main(String[] args) {
     double nilai,totalNilai,kelompok = 0, rataNilai = 0;
     double tertinggi = 0, terendah = 100;
 
-    int i = 1;
+    
 
-    while (i <= 6) {
+    for (int i = 1; i <= 6; i++) {
         System.out.println("Kelompok " + i);
        totalNilai = 0;
 
@@ -22,7 +22,7 @@ public static void main(String[] args) {
 
         rataNilai = totalNilai/5;
         System.out.println("Rata-rata: " + rataNilai);
-        i++;
+        
         
         if (rataNilai > tertinggi){
             tertinggi = rataNilai;
@@ -35,7 +35,7 @@ public static void main(String[] args) {
     
 
 
-    System.out.println("Rata rata nilai tertinggi " + tertinggi + " kelompok " + (int)(kelompok-1));
+    System.out.println("Rata rata nilai tertinggi " + tertinggi + " kelompok " + (int)(kelompok));
 
 
 }    
