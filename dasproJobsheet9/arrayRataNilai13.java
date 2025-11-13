@@ -10,7 +10,7 @@ public class arrayRataNilai13 {
         int j = 0;
         double total= 0;
         double total1 = 0;
-        double rataLulus, rataTdkLulus;
+        double rataLulus, rataTdkLulus, tertinggi = 0, terendah = 100;
         
         System.out.print("Masukkan jumlah mahasiswa: ");
         int jumlahMhs = sc.nextInt();
@@ -24,7 +24,13 @@ public class arrayRataNilai13 {
         for (int i = 0; i < nilaiMhs.length; i++){
             System.out.print("Masukkan nilai mahasiswa ke-"+ (i+1)+ ": ");
             nilaiMhs[i] = sc.nextInt();
+            if ( nilaiMhs[i] > tertinggi){
+                tertinggi = nilaiMhs[i];
+            } if ( nilaiMhs[i] < terendah){
+                terendah = nilaiMhs[i];
+            }
 
+            
 
         }
     
@@ -42,8 +48,10 @@ public class arrayRataNilai13 {
         rataLulus = total/lulus;
         rataTdkLulus = total1/tidakLulus;
         System.out.println("Mahasiswa yang lulus: "+lulus);
-        System.out.println("Rata-rata nilai lulus = "+rataLulus);
+        System.out.println("Rata-rata nilai lulus: "+rataLulus);
         System.out.println("Rata-rata nilai tidak lulus: "+ rataTdkLulus);
+        System.out.println("Nilai tertinggi: " + (int)tertinggi);
+        System.out.println("Nilai terendah: " + (int)terendah);
 
         break;
        }
