@@ -9,10 +9,13 @@ public static void main(String[] args) {
 
     for (int i = 0; i < nilai.length; i++) {
         System.out.println("Imput nilai mahasiswa ke-" + (i+1) + ": ");
+        double totalPerSiswa = 0;
         for (int j = 0; j < nilai[i].length; j++) {
             System.out.print("Nilai mata kuliah " + (i+1) + ": ");
             nilai[i][j] = sc.nextInt();
+            totalPerSiswa += nilai[i][j];
         }
+        System.out.println("Nilai rata-rata: " + (totalPerSiswa / 3));
     }
 }    
 }
