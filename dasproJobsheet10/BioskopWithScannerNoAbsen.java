@@ -1,4 +1,5 @@
 package dasproJobsheet10;
+
 import java.util.Scanner;
 
 public class BioskopWithScannerNoAbsen {
@@ -6,7 +7,7 @@ public class BioskopWithScannerNoAbsen {
         Scanner sc = new Scanner(System.in);
         String[][] penonton = new String[4][2];
         int menu;
-        
+
         do {
             System.out.println("Menu:");
             System.out.println("1. Input data penonton");
@@ -14,25 +15,38 @@ public class BioskopWithScannerNoAbsen {
             System.out.println("3. Exit");
             System.out.print("Pilih menu: ");
             menu = sc.nextInt();
-            sc.nextLine(); 
-            
+            sc.nextLine();
+
             if (menu == 1) {
-                System.out.println("============================");
-                System.out.print("Masukkan nama penonton: ");
-                String nama = sc.nextLine();
+    int baris, kolom;
+    boolean kursiKosong;
+    do {
+        System.out.println("============================");
+        System.out.print("Masukkan baris (0-3): ");
+        baris = sc.nextInt();
+        System.out.print("Masukkan kolom (0-1): ");
+        kolom = sc.nextInt();
 
-                System.out.print("Masukkan baris (0-3): ");
-                int baris = sc.nextInt();
-                System.out.print("Masukkan kolom (0-1): ");
-                int kolom = sc.nextInt();
-                System.out.println("============================");
-                sc.nextLine(); 
+        // Validasi indeks
+        if (baris < 0 || baris > 3 || kolom < 0 || kolom > 1) {
+            System.out.println("Nomor kursi tidak tersedia. Silahkan coba lagi ;)");
+            kursiKosong = false;
+        } else if (penonton[baris][kolom] != null) {
+            System.out.println("Kursi sudah terisi oleh penonton lain. Silahkan pilih kursi lain.");
+            kursiKosong = false;
+        } else {
+            kursiKosong = true;
+        }
+        sc.nextLine(); // untuk bersihkan newline setelah nextInt
+    } while (!kursiKosong);
 
-                
-                
-                
-                penonton[baris][kolom] = nama;
-            } else if (menu == 2) {
+    System.out.print("Masukkan nama penonton: ");
+    String nama = sc.nextLine();
+    penonton[baris][kolom] = nama;
+    System.out.println("============================");
+}
+            
+             else if (menu == 2) {
                 System.out.println("============================");
                 System.out.println("       Daftar Penonton");
                 System.out.println("============================");
@@ -40,13 +54,14 @@ public class BioskopWithScannerNoAbsen {
                     for (int j = 0; j < penonton[i].length; j++) {
                         System.out.print(penonton[i][j] + "\t");
                     }
-                
+
                     System.out.println();
                 }
             }
         } while (menu != 3);
-        
+
         System.out.println("Program selesai.");
         sc.close();
     }
 }
+
