@@ -27,7 +27,7 @@ public class BioskopWithScannerNoAbsen {
         System.out.print("Masukkan kolom (0-1): ");
         kolom = sc.nextInt();
 
-        // Validasi indeks
+       
         if (baris < 0 || baris > 3 || kolom < 0 || kolom > 1) {
             System.out.println("Nomor kursi tidak tersedia. Silahkan coba lagi ;)");
             kursiKosong = false;
@@ -37,7 +37,7 @@ public class BioskopWithScannerNoAbsen {
         } else {
             kursiKosong = true;
         }
-        sc.nextLine(); // untuk bersihkan newline setelah nextInt
+        sc.nextLine(); 
     } while (!kursiKosong);
 
     System.out.print("Masukkan nama penonton: ");
@@ -52,6 +52,9 @@ public class BioskopWithScannerNoAbsen {
                 System.out.println("============================");
                 for (int i = 0; i < penonton.length; i++) {
                     for (int j = 0; j < penonton[i].length; j++) {
+                        if(penonton [i][j] == null){
+                            System.out.print("****" + "\t");
+                        } else
                         System.out.print(penonton[i][j] + "\t");
                     }
 
