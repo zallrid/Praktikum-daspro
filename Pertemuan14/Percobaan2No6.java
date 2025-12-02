@@ -1,7 +1,7 @@
 package Pertemuan14;
 import java.util.Scanner;
 
-public class kafe13 {
+public class Percobaan2No6 {
 
     static void Menu(String namaPelanggan, boolean isMember, String kodePromo) {
         System.out.println("=== MENU CAFE ===");
